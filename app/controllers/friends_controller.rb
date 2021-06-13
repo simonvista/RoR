@@ -1,5 +1,7 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
+  # unauthorized user can see friends and details
+  before_action :authenticate_user!,except:[:index,:show]
 
   # GET /friends or /friends.json
   def index

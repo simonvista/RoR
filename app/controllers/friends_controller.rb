@@ -7,6 +7,7 @@ class FriendsController < ApplicationController
   # All actions
   # GET /friends or /friends.json
   def index
+    # @friends is an instance variance, a global variable, passing to index page
     @friends = Friend.all
   end
 
@@ -17,6 +18,7 @@ class FriendsController < ApplicationController
   # GET /friends/new
   def new
     # @friend = Friend.new
+    # @friend is an instance variance, a global variable, passing to new page
     @friend=current_user.friends.build
   end
 
